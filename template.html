@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, showMathMenu: false});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+</head>
+<body>
+    <h1 align="center">MATH0000 Page Template</h1>
+    The page is a template for online notes.
+
+    <h2>Set Notations</h2>
+    Sets act as an extremely important role in different aspects of university's mathematics. Hence, we introduce the following definitions to illustrate some basic conventions and notations in set theory, which are essential building blocks towards our construction in later chapters. 
+    <h3>Set Operations</h3>
+    <div class = "def">
+        <h4></h4>
+        <p>
+            A <b>set</b> is a collection of objects. Each object in a set is called an <b>element</b>.
+        </p>
+    </div>
+
+    Sets are described by enclosing its elements inside the curly braces $\{\}$. When the number of elements is finite, one may just list out the elements in the curly braces, separated by commas "$,$".
+    
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            $\{1,2,3,4,5,6\}$ is a set containing six numbers.
+            <br>
+            $\{\text{red}, \text{green}, \text{blue}\}$ is a set containing three words.
+            <br>
+            $\{\infty\}$ is a set containing one symbol.
+            <br>
+            $\{\{1,2\},\{2,3\}\}$ is a set containing two sets.
+        </p>
+    </div>
+
+    In particular, a set consisting of exactly one member is called a <i>singleton</i>, a set consisting of exactly two members is called a <i>doubleton</i>.
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A$ denote a set and $x$ denote an object. We write $x\in A$ if $x$ is an element in $A$ and $x\notin A$ if $x$ is not an element in $A$. 
+        </p>
+    </div>
+
+    There are many other ways to describe $x\in A$. For instance, "$x$ belongs to $A$", "$x$ is a member in $A$", or simply "$x$ is in $A$".
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A$ and $B$ denote sets. $A$ is a <b>subset</b> of $B$ if for every $x\in A$, we have $x\in B$. Notationally, it is written as $A\subseteq B$. In contrast, we write $A\nsubseteq B$ if $A$ is not a subset of $B$.
+        </p>
+    </div>
+
+    Intuitively, $A\subseteq B$ means a set $A$ is "contained" in another set $B$ in the sense that each element in $A$ is also an element in $B$. 
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            Let $X$ denote the set $\{1,2,3,4,5,6\}$. Then we have $1\in X$, $0\notin X$, $\{1,3,5\}\subseteq X$ and $\{2,4,8\}\nsubseteq X$. 
+        </p>
+    </div>
+
+    Beware of the difference between "$\in$" and "$\subseteq$".  
+
+    <div class = "ex">
+        <h4></h4>
+        <p>
+            Determine whether each of the following statements is correct.
+            <br>
+            <b>1.</b> $0\in\{0\}$.
+            <br>
+            <b>2.</b> $0\subseteq\{0\}$.
+            <br>
+            <b>3.</b> $\{0\}\in\{0\}$.
+            <br>
+            <b>4.</b> $\{0\}\subseteq\{0\}$.
+            <br>
+            <b>5.</b> $\{0\}\in\{\{0\}\}$.
+            <br>
+            <b>6.</b> $\{0\}\subseteq\{\{0\}\}$.
+        </p>
+    </div>
+
+    Now we provide a mathematical routine for checking whether two sets are equal.
+
+    <div class = "thm">
+        <h4></h4>
+        <p>
+            Two sets $A$ and $B$ are the same if and only if $A\subseteq B$ and $B\subseteq A$. Notationally, it is written as $A=B$.
+        </p>
+    </div>
+
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            We have $\{1,5,9\}=\{5,9,1\}$. One may check that every element in a set can be found in the other set. Hence, they are subsets of each other.
+        </p>
+    </div>
+    It can be observed from the previous Example that two sets are the same as long as each element in one set is present in the other, while the order of the elements does not matter at all. Keep this in mind when attempting the following Exercise.
+
+    <div class = "ex">
+        <h4></h4>
+        <p>
+            It is given that $x$ is a real number such that $\{x+2,x-1,0\}=\{2x,2-x,-1\}$. Find the value of $x$.
+        </p>
+    </div>
+
+    A set can contain no element.
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            An <b>empty set</b> is the set $\phi=\{\}$ that does not contain any element.
+        </p>
+    </div>
+
+    <div class = "lem">
+        <h4></h4>
+        <p>
+            $\phi\subseteq A$ for every set $A$.
+        </p>
+    </div>
+
+
+    A set can also contain infinite number of elements, and we might have met with some of these infinite sets already.
+
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            $\mathbb{N}=\{1,2,3,\cdots\}$ is the set of all positive integers.
+            <br>
+            $\mathbb{Z}=\{\cdots,-2,-1,0,1,2,\cdots\}$ is the set of all integers.
+            <br>
+            $\mathbb{Q}$ is the set of all rational numbers.
+            <br>
+            $\mathbb{R}$ is the set of all real numbers.
+        </p>
+    </div>
+    
+    In general, it could be hard to list out all the elements in a set, espectially when it has infinite number of elements. To describe those sets accurately, we will introduce a more general notation.
+    
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A$ be a set and $P(x)$ be a statement depending on $x$. $\{z\in A: P(z)\}$ is a set with the following property: for every object $x$,
+            $$x\in \{z\in A: P(z)\}\quad\text{if and only if}\quad x\in A \text{ and } P(x) \text{ is true}.$$
+        </p>
+    </div>
+
+    Essentially, the set $\{z\in A: P(z)\}$ collects all the elements $z\in A$ that have a certain characteristics, which is described in $P(z)$. Instead of listing out all the members, this notation uses explicit descriptions or rules to judge whether an object belongs to it. If the context is clear, we could omit specifying the set $A$ and just write $\{z: P(z)\}$, which simply means that the set collects every object $z$ that satisfies $P(z)$.
+
+
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            $(-1,6)=\{x\in \mathbb{R}: -1\lt x\lt 6\}$.
+            <br>
+            $[0,\infty)=\{y\in \mathbb{R}: y\ge 0\}$.
+            <br>
+            $\{a\in\mathbb{R}:a^2-4=0\}=\{-2,2\}$.
+            <br>
+            $\{b\in\mathbb{R}:b^2-4\lt 0\}=(-2,2)$.
+            <br>
+            $\mathbb{Q}=\{q: \text{ there exist } m,n\in \mathbb{Z} \text{ such that } q=\frac{m}{n}\}$.
+        </p>
+    </div>
+
+    <div class = "ex">
+        <h4></h4>
+        <p>
+            <b>1.</b> Use set notations to represent the set of all negative integers.
+            <br>
+            <b>2.</b> Use set notations to represent the set of all irrational numbers.
+            <br>
+            <b>3.</b> Use set notations to represent the set of all prime numbers.
+        </p>
+    </div>
+    
+    Now we will introduce several set operations.
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A, B$ be sets. Their <b>union</b> $A\cup B$ is the set
+            $\{x: x\in A \text{ or } x\in B\}$.
+        </p>
+    </div>
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A, B$ be sets. Their <b>intersection</b> $A\cap B$ is the set\
+            $\{x: x\in A \text{ and } x\in B\}$.
+        </p>
+    </div>
+
+    A small remark. We say that two sets $A$ and $B$ are <i>disjoint</i> if and only if $A\cap B=\phi$, i.e. they do not have a common element.
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A, B$ be sets. The <b>complement</b> of $B$ in $A$, denoted as $A\backslash B$, is the set
+            $\{x: x\in A \text{ and } x\notin B\}$.
+        </p>
+    </div>
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A, B$ be sets. Their <b>symmetric difference</b> $A\triangle B$ is the set $(A\cup B)\backslash(A\cap B)$.
+        </p>
+    </div>
+
+    By design, $A\cup B$ means "either $A$, $B$, or both" whereas $A\triangle B$ means "either $A$ or $B$, but not both". 
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            Let $A=\{1,2,3,5,8,13,21,34\}$ and $B=\{2,3,5,7,11,13,17,19\}$ be two sets. Then
+            $$\begin{align*}
+            A\cup B &= \{1,2,3,5,7,8,11,13,17,19,21,34\},\\
+            A\cap B &= \{2,3,5,13\},\\
+            A\backslash B &= \{1,8,21,34\}\quad\text{and}\\
+            A\triangle B &= \{1,7,8,11,17,19,21,34\}.
+            \end{align*}$$
+        </p>
+    </div>
+    Some trivial properties follow from the definitions.
+    <div class = "lem">
+        <h4></h4>
+        <p>
+            For every set $A$, we have $A\cup A=A\cap A=A$ and $A\backslash A=\phi$.
+        </p>
+    </div>
+
+    <div class = "lem">
+        <h4></h4>
+        <p>
+            For every sets $A$ and $B$, we have $A\cup B=B\cup A$ and $A\cap B=B\cap A$.
+        </p>
+    </div>
+
+    <div class = "lem">
+        <h4></h4>
+        <p>
+            For every sets $A$, $B$ and $C$, we have $A\cup (B\cup C)=(A\cup B)\cup C$ and $A\cap (B\cap C)=(A\cap B)\cap C$.
+        </p>
+    </div>
+
+    In particular, we can see that the <i>commutative</i> and the <i>associative</i> properties that appear in addition and multiplication of numbers work well for unions and intersections. We have the <i>distributive</i> property as well, although it is less obvious.
+
+    <div class = "thm">
+        <h4>(Distributive Law)</h4>
+        <p>
+            For every sets $A$, $B$ and $C$, we have
+            $$\begin{align*}
+            A\cup (B\cap C)&=(A\cup B)\cap (A\cup C)\quad\text{and}\\
+            A\cap (B\cup C)&=(A\cap B)\cup (A\cap C).
+            \end{align*}$$
+        </p>
+    </div>
+    The following Theorem is a famous one, but even less trivial.
+
+    <div class = "thm">
+        <h4>(De Morgan's Law)</h4>
+        <p>
+            For every sets $A$, $B$ and $C$, we have
+            $$\begin{align*}
+            A\backslash (B\cap C)&=(A\backslash B)\cup (A\backslash C)\quad\text{and}\\
+            A\backslash (B\cup C)&=(A\backslash B)\cap (A\backslash C).
+            \end{align*}$$
+        </p>
+    </div>
+
+    In the previous Theorem, if we regard the set $A$ as the "universal set" that contains all objects of our interest, then we may omit the involvement of $A$ by writing $B^c=A\backslash B$ and simply call it the complement of $B$ (i.e. "not $B$"). In this context, the De Morgan's Law is rephrased as $(B\cap C)^c=B^c\cup C^c$ and $(B\cup C)^c=B^c\cap C^c$.
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A, B$ be sets. Their <b>cartesian product</b> $A\times B$ is the set $\{(a,b): a\in A \text{ and } b\in B\}$.
+        </p>
+    </div>
+
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            $\{1,2\}\times\{3,4,5\}=\{(1,3),(1,4),(1,5),(2,3),(2,4),(2,5)\}$.
+            <br>
+            $\mathbb{R}^2=\mathbb{R}\times\mathbb{R}=\{(x,y): x\in \mathbb{R} \text{ and }y\in\mathbb{R}\}$ is the set of all ordered pairs of real numbers (or geometrically, the set of points in the plane).
+            <br>
+            $\{(x,y)\in \mathbb{R}^2: x^2+y^2=1\}$ is geometrically described as a unit circle in $\mathbb{R}^2$.
+            <br>
+            $\{(x,y)\in \mathbb{R}^2: x^2+y^2\le 1\}$ is geometrically described as a unit disk in $\mathbb{R}^2$.
+        </p>
+    </div>
+
+    <h3>Basic Combinatorics</h3>
+
+    <div class = "def">
+        <h4></h4>
+        <p>
+            Let $A$ be a set with finitely many elements. We denote the number of elements in $A$ by $|A|$.
+        </p>
+    </div>
+    If $A$ is an infinite set, one can still define $|A|$ as a measure of its "number of elements" and conduct "size comparisons" with other sets. However, it is beyond the scope of this course. We will deal with $|A|$ only in case $A$ is finite.
+    <div class = "thm">
+        <h4></h4>
+        <p>
+            If $A$ and $B$ are disjoint finite sets, then
+            $|A\cup B|=|A|+|B|$.
+        </p>
+    </div>
+
+    <div class = "thm">
+        <h4>(Principle of Inclusion-Exclusion)</h4>
+        <p>
+            If $A$ and $B$ are finite sets, then
+            $|A\cup B|=|A|+|B|-|A\cap B|$.
+        </p>
+    </div>
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            In a squad of 23 football players, 18 of which are right footed and 7 of which are left footed. How many players in this squad are both footed? 
+        </p>
+    </div>
+
+
+
+    <div class = "cor">
+        <h4></h4>
+        <p>
+            If $A$, $B$ and $C$ are finite sets, then
+            $|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$.
+        </p>
+    </div>
+
+    <div class = "ex">
+        <h4></h4>
+        <p>
+            For each positive integer $i$, define a set $M_i=\{n\in\mathbb{N}\cap[1,100]:n\text{ is a multiple of }i\}$. Find $|M_3\cup M_5\cup M_7|$.
+        </p>
+    </div>
+
+    <div class = "thm">
+        <h4>(Principle of Multiplication)</h4>
+        <p>
+            If $A$ and $B$ are finite sets, then
+            $|A\times B|=|A||B|$.
+        </p>
+    </div>
+
+    <div class = "eg">
+        <h4></h4>
+        <p>
+            Calculate the total number of different straight flushes.
+        </p>
+    </div>
+
+
+    <div class = "pr">
+        <h4></h4>
+        <p>
+
+        </p>
+    </div>
+    <h2>Title for Chapter 2</h2>
+
+
+    <h2>Title for Chapter 3</h2>
+
+
+    <h2>Title for Chapter 4</h2>
+
+</body>
+</html>
