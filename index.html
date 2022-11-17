@@ -3,9 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link id ="theme"  rel="stylesheet" href="style2.css">
+
     <link rel="stylesheet" type="text/css"
     href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
-    <link rel="stylesheet" href="./style.css">
+
     <script>
         MathJax = {
           tex: {
@@ -24,8 +26,28 @@
     <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
+    <style>
+        .style{
+            width: 70px;
+            height: 30px;
+            border: 1px solid grey;
+            color:grey;
+            background-color: aliceblue;
+            cursor: pointer;
+            user-select: none;
+        }
+        .style:disabled{
+            font-weight: bold;
+            border: 1px solid blue;
+            color:blue;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
+    <button class="style" id="style1">Style 1</button>
+    <button disabled class="style" id="style2">Style 2</button>
+    <!--button class="style" id="style2">Style 3</button-->
     <h1 align="center">MATH0000 Page Template</h1>
     The page is a template for online notes.
 
@@ -390,5 +412,16 @@
 
     <h2>Title for Chapter 4</h2>
 
+    <script type="text/javascript">
+        var styles = document.getElementsByClassName("style");
+          for (var j = 0; j < styles.length; j++) {
+            styles[j].addEventListener("click", function() {
+              for(s of styles) s.disabled = false;
+              this.disabled= true;
+              var theme = document.getElementById("theme");
+              theme.setAttribute('href', `${this.id}.css`);
+            });
+          }
+    </script>
 </body>
 </html>

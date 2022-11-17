@@ -1,0 +1,174 @@
+body {
+    margin: auto;
+    width: 100%;
+    min-width: 500px;
+    max-width: 700px;
+    font-family: "Computer Modern Sans", sans-serif;
+    font-size:110%;
+    padding: 20px;
+    counter-reset: chapter;
+    text-align: justify;
+}
+
+h2 {
+    counter-reset: section definition example theorem exercise lemma corollary problem;
+}
+
+h2::before {
+    counter-increment: chapter;
+    content: "Chapter " counter(chapter) " - ";
+}
+
+h3::before {
+    counter-increment: section;
+    content: "Section " counter(chapter)"."counter(section) " - ";
+}
+
+.title {
+    width: max-content;
+    color:#fee;
+    border-bottom: 20px solid #900;
+    border-right: 20px solid transparent;
+    padding: 0px 0px;
+    margin: 0px 4px;
+    margin-top: 10px;
+    font-size:110%;
+    font-weight: bold;
+    height: 0;
+}
+
+.def h4, .eg h4, .thm h4, .ex h4, .lem h4, .cor h4, .pr h4{
+    width: 100%;
+    border-spacing: 0cm;
+    border-bottom:none;
+    padding: 9px 12px 2px;
+    margin: 9px 0px 0px 5px;
+    text-decoration: underline;
+}
+
+.def p, .eg p, .thm p, .ex p, .lem p, .cor p, .pr p{
+    width: 100%;
+    padding: 3px 12px 9px;
+    margin: 0px 0px 9px 5px;
+    text-align: left;
+}
+
+.def p{  
+    background-color: #eee;
+    border-left: 4px solid #111;
+    
+}
+.def h4 {
+    background-color: #eee;
+    border-left: 4px solid #111;
+    color:#111;
+}
+
+
+.def h4::before {
+    counter-increment: definition;
+    content: "Definition "counter(chapter)"." counter(definition)" ";
+}
+
+.eg p {  
+    background-color: #fee;
+    border-left: 4px solid #800;
+}
+
+.eg h4 {
+    background-color: #fee;
+    border-left: 4px solid #800;
+    color:#800;
+}
+
+.eg h4::before {
+    counter-increment: example;
+    content: "Example "counter(chapter)"." counter(example)" ";
+}
+
+.thm p {  
+    background-color: #eef;
+    border-left: 4px solid #006;
+}
+
+.thm h4 {
+    color:#006;
+    background-color: #eef;
+    border-left: 4px solid #006;
+    counter-reset: corollary;
+}
+
+.thm h4::before {
+    counter-increment: theorem;
+    content: "Theorem "counter(chapter)"." counter(theorem)" ";
+}
+
+.ex p {  
+    background-color: #efe;
+    border-left: 4px solid #060;
+}
+
+.ex h4 {
+    color:#060;
+    background-color: #efe;
+    border-left: 4px solid #060;
+}
+
+.ex h4::before {
+    counter-increment: exercise;
+    content: "Exercise "counter(chapter)"." counter(exercise)" ";
+}
+
+.pr p {  
+    background-color: #fef;
+    border-left: 4px solid #505;
+}
+
+.pr h4 {
+    color:#505;
+    background-color: #fef;
+    border-left: 4px solid #505;
+}
+
+.pr h4::before {
+    counter-increment: problem;
+    content: "Problem "counter(chapter)"." counter(problem)" ";
+}
+
+
+.lem p {  
+    background-color: #ffd;
+    border-left: 4px solid #550;
+
+}
+
+.lem h4 {
+    color:#550;
+    background-color: #ffd;
+    border-left: 4px solid #550;
+
+}
+
+.lem h4::before {
+    counter-increment: lemma;
+    content: "Lemma "counter(chapter)"." counter(lemma)" ";
+}
+
+
+.cor p {  
+    background-color: #eff;
+    border-left: 4px solid #133;
+}
+
+.cor h4 {
+    color:#133;
+    background-color: #eff;
+    border-left: 4px solid #133;
+}
+
+
+
+.cor h4::before {
+    counter-increment: corollary;
+    content: "Corollary "counter(chapter)"."counter(theorem)"." counter(corollary)" ";
+}
